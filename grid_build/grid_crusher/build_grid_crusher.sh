@@ -32,8 +32,9 @@ make all install 2>&1 | tee op_mpfr.out
 ##################
 #Obtain Grid and support codes
 ##################
-source setup_env.sh
+
 cd $grid
+source setup_env.sh
 git clone https://paboyle@github.com/paboyle/Grid
 cd Grid
 ./bootstrap.sh
