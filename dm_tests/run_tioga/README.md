@@ -31,7 +31,7 @@
 - `mkdir run2`
 - `cd run2`
 - Copy the file [submit2.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/develop/dm_tests/run_tioga/submit2.sh) into `run2`:
-  - `cp submit.sh .`
+  - `cp submit2.sh .`
 - Edit the submit script:
   - `GRID=<path to build directory for Grid>`
 - Submit the job `sbatch submit2.sh`
