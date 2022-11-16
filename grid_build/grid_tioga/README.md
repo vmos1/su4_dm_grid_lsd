@@ -10,8 +10,7 @@
   - `mkdir run_dir`
   - `cd run_dir`
   -  `cp -r grid_benchmarks_tests .`
-  -  'cd grid_benchmarks_tests`
 - Now `cd grid_benchmarks_tests` 
-- Edit the contents of the files `run_benchmark*.h`:
+- Edit the contents of each of the 3 files `run_benchmark*.h`:
   - SETUP_DIR=<path to `build_dir` above>
 - Now run `sbatch run_benchmark1_1node_dwf_fp32.sh`, etc.
