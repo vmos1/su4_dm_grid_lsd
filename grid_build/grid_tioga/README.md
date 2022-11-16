@@ -13,4 +13,7 @@
 - Now `cd grid_benchmarks_tests` 
 - Edit the contents of each of the 3 files `run_benchmark*.h`:
   - SETUP_DIR=<path to `build_dir` above>
-- Now run `sbatch run_benchmark1_1node_dwf_fp32.sh`, etc.
+- Now submit the scripts:
+  - `sbatch run_benchmark1_1node_dwf_fp32.sh`
+  - `sbatch run_benchmark2_2nodes_dwf_fp32.sh`
+  - `sbatch run_benchmark3_dwf_ITT.sh`
