@@ -32,8 +32,9 @@ make all install 2>&1 | tee op_mpfr.out
 ##################
 #Obtain Grid and support codes
 ##################
-source setup_env.sh
+
 cd $grid
+source setup_env.sh
 git clone https://paboyle@github.com/paboyle/Grid
 cd Grid
 ./bootstrap.sh
@@ -42,9 +43,8 @@ cd Grid
 #build Grid
 ##################
 cd $grid/
-mkdir -p install
-mkdir build-Nc4
-cd build-Nc4
+mkdir -p install/build-Nc4
+cd install/build-Nc4
 
 ../../Grid/configure --enable-comms=mpi-auto --enable-unified=no --enable-shm=nvlink \
 --enable-accelerator=hip  --enable-gen-simd-width=64  --enable-simd=GPU --enable-Nc=4 \
