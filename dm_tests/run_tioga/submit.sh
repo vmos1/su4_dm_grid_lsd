@@ -27,12 +27,12 @@ export MPICH_OFI_NIC_POLICY=GPU
 export OPT="--comms-concurrent --comms-overlap "
 
 
-GRID=/usr/workspace/lsd/ayyar1/projects/SU4_sdm/Grid_builds/2022_nov11_2022/
+GRID=/usr/WS2/lsd/ayyar1/projects/SU4_sdm/Grid_builds/2022_nov15_tioga
 source $GRID/setup_env.sh
 export TSAN_OPTIONS='ignore_noninstrumented_modules=1'
 export LD_LIBRARY_PATH
 
-BET=A10.0
+BETA=10.0
 M_F=0.1
 PARAMS=" --accelerator-threads 8 --grid 64.64.32.32 --mpi 2.2.2.1 --comms-sequential --shm 2048 --shm-mpi 1"
 
