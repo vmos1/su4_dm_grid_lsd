@@ -7,6 +7,10 @@
   - `cp code/* .`
 - Copy the [dm_tests/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/develop/dm_tests/run_tioga/Makefile) into `build`: 
   - `cp Makefile .`
+- Edit the submit script:
+  - `GRID=<path to build directory for Grid>`
+  - `PREFIX=<path to build directory for Grid>/grid_prefix`
+  
 ## Run Grid
 ### HMC test:
 - `cd dm_tests/build`
