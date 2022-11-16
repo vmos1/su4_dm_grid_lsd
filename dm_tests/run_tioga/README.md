@@ -2,9 +2,11 @@
 
 ## Build executables
 - `mkdir dm_tests/build`
+- `cd dm_tests/build`
 - Copy the contents of the folder [`dm_tests/code`](https://github.com/vmos1/su4_dm_grid_lsd/tree/develop/dm_tests/code) into `build`: 
-  - `cp code/* dm_tests/build`
-- Copy the [dm_tests/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/develop/dm_tests/run_tioga/Makefile) into it: `cp Makefile .`
+  - `cp code/* .`
+- Copy the [dm_tests/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/develop/dm_tests/run_tioga/Makefile) into it: 
+  - `cp Makefile .`
 ## Run Grid
 ### HMC test:
 - cd `dm_tests/build`
