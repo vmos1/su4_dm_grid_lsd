@@ -19,7 +19,7 @@ export MPICH_SMP_SINGLE_COPY_MODE=CMA
 export OMP_NUM_THREADS=8
 export MPICH_OFI_NIC_POLICY=GPU
 
-SETUP_DIR=/usr/WS2/lsd/ayyar1/projects/SU4_sdm/Grid_builds/2022_nov15_tioga
+SETUP_DIR=/gpfs/alpine/lgt104/proj-shared/ayyar/LSD_projects/build_LSD_grid/install_nov2_2022
 echo $SETUP_DIR
 source $SETUP_DIR/setup_env.sh
 
