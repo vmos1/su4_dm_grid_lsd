@@ -10,13 +10,16 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
   - `cp code/* .`
 - Copy the [dm_tests/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/develop/dm_tests/run_tioga/Makefile) into `build`: 
   - `cp Makefile .`
-  
-## Run Grid
-### HMC test:
-- `cd dm_tests/build`
+
+### HMC test: 
 - `source $GRID_DIR/setup_env.sh`
 - `make hmc_SDM`
-- `cd ..`
+### DWF test: 
+- `source $GRID_DIR/setup_env.sh`
+- `make dweofa_HSDM`
+## Run Grid
+### HMC test:
+- `cd <run_dir>/dm_tests`
 - `mkdir run1`
 - `cd run1`
 - Copy the file [submit1.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_tioga/submit1.sh) into `run1`:
@@ -24,10 +27,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - Submit the job `sbatch submit1.sh`
 
 ### dwf test
-- `cd dm_tests/build`
-- `source $GRID_DIR/setup_env.sh`
-- `make dweofa_HSDM`
-- `cd ..`
+- `cd <run_dir>/dm_tests`
 - `mkdir run2`
 - `cd run2`
 - Copy the file [submit2.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_tioga/submit2.sh) into `run2`:
