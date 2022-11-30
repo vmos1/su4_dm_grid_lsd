@@ -12,8 +12,9 @@
   - `cd run_dir`
   -  `cp -r grid_benchmarks_tests .`
 - Now `cd grid_benchmarks_tests` 
-- `export GRID_DIR=<build_dir>`
-- `export RUN_DIR=<run_dir>`
+- Setup variables:
+  - `export GRID_DIR=<build_dir>`
+  - `export RUN_DIR=<run_dir>`
 - Now submit the scripts:
   - `sbatch run_benchmark1_1node_dwf_fp32.sh`
   - `sbatch run_benchmark2_2nodes_dwf_fp32.sh`
