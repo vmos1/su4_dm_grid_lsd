@@ -7,7 +7,7 @@
 
 # Test build
 ## Grid benchmarks
-- Create a run directory `run_dir` and copy the [folder](https://github.com/vmos1/su4_dm_grid_lsd/tree/develop/grid_build/grid_tioga/grid_benchmarks_tests) into it: 
+- Create a run directory `run_dir` and copy the folder [grid_benchmarks_tests](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/grid_build/grid_tioga/grid_benchmarks_tests) into it: 
   - `mkdir run_dir`
   - `cd run_dir`
   -  `cp -r grid_benchmarks_tests .`
