@@ -1,7 +1,8 @@
 # sites: Lime, MPFR place in grid_prefix
 ##################
-export prefix=$PWD/grid_prefix
-export grid=$PWD
+export grid=$GRID_DIR
+export prefix=$GRID_DIR/grid_prefix
+
 
 mkdir -p $prefix
 echo GRID $grid
