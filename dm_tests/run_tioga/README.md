@@ -14,6 +14,7 @@
 ## Run Grid
 ### HMC test:
 - `cd dm_tests/build`
+- `source {build_dir}/setup_env.sh`
 - `make hmc_SDM`
 - `cd ..`
 - `mkdir run1`
@@ -26,6 +27,7 @@
 
 ### dwf test
 - `cd dm_tests/build`
+- `source {build_dir}/setup_env.sh`
 - `make dweofa_HSDM`
 - `cd ..`
 - `mkdir run2`
