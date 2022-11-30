@@ -17,7 +17,14 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 ### DWF test: 
 - `source $GRID_DIR/setup_env.sh`
 - `make dweofa_HSDM`
+
+
 ## Run Grid
+
+- Setup paths:
+  - `export GRID_DIR=<build_dir>`
+  - `export RUN_DIR=<run_dir>`
+
 ### HMC test:
 - `cd <run_dir>/dm_tests`
 - `mkdir run1`
