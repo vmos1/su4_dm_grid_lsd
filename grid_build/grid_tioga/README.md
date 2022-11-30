@@ -1,6 +1,7 @@
 # Instructions to build Grid on Tioga at Livermore
 - Create a build directory `build_dir`.
 - Copy the scripts `build_tioga.sh` and `setup_env.sh` from this [folder](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/grid_build/grid_tioga) to `build_dir`.
+- `export GRID_DIR=<build_dir>`
 - Run the script `./build_tioga.sh`
 
 
