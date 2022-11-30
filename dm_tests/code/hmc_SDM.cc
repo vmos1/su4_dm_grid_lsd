@@ -36,10 +36,12 @@ int main(int argc, char **argv) {
   using namespace Grid;
 
   // get beta and the fermion mass (last two command line parameters)
-  Real beta = std::stod(argv[argc - 2]);
-  Real m_f = std::stod(argv[argc - 1]);
-  
-  argc -= 2;
+  Real beta = std::stod(argv[argc - 4]);
+  Real m_f = std::stod(argv[argc - 3]);
+  double traj_l = std::stod(argv[argc - 2]);
+  int md_steps = std::stod(argv[argc - 1]);
+
+  argc -= 4;
   
 
   Grid_init(&argc, &argv);
@@ -71,6 +73,8 @@ int main(int argc, char **argv) {
   CPparams.format = "IEEE64BIG";
   
   TheHMC.Resources.LoadNerscCheckpointer(CPparams);
+  //TheHMC.Resources.LoadBinaryCheckpointer(CPparams);
+//  TheHMC.Resources.LoadScidacCheckpointer(CPparams);
 
   RNGModuleParameters RNGpar;
   RNGpar.serial_seeds = "1 2 3 4 5";
@@ -100,7 +104,7 @@ int main(int argc, char **argv) {
   FermionAction FermOpA(U, *GridPtr, *GridRBPtr, m_f);
   FermionAction FermOpB(U, *GridPtr, *GridRBPtr, m_f);
 
-  ConjugateGradient<FermionField> CG(1.0e-8, 2000);
+  ConjugateGradient<FermionField> CG(1.0e-8, 10000);
 
   TwoFlavourPseudoFermionAction<FermionImplPolicy> Nf2_A(FermOpA, CG, CG);
   TwoFlavourPseudoFermionAction<FermionImplPolicy> Nf2_B(FermOpB, CG, CG);
@@ -137,8 +141,8 @@ int main(int argc, char **argv) {
   */
 
   // HMC parameters are serialisable 
-  TheHMC.Parameters.MD.MDsteps = 20;
-  TheHMC.Parameters.MD.trajL   = 1.0;
+  TheHMC.Parameters.MD.MDsteps = md_steps;
+  TheHMC.Parameters.MD.trajL   = traj_l;
 
   TheHMC.ReadCommandLine(argc, argv); // these can be parameters from file
   TheHMC.Run();  // no smearing
