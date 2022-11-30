@@ -20,7 +20,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `mkdir run1`
 - `cd run1`
 - Copy the file [submit1.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_tioga/submit1.sh) into `run1`:
-  - `cp submit.sh .`
+  - `cp submit1.sh .`
 - Submit the job `sbatch submit1.sh`
 
 ### dwf test
