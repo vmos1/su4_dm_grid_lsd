@@ -42,4 +42,4 @@ cd install/build-Nc4
 ../../Grid/configure --enable-comms=mpi-auto --enable-unified=no --enable-shm=nvlink --enable-accelerator=hip  --enable-gen-simd-width=64  --enable-simd=GPU --enable-Nc=4 --disable-fermion-reps --with-lime=$prefix/lime-1.3.2 --prefix=$prefix CXX=hipcc MPICXX=mpicxx CXXFLAGS="-fPIC -I/opt/rocm-5.2.0/include/ -std=c++14 -I${MPICH_DIR}/include" LDFLAGS="-L${MPICH_DIR}/lib -lmpi -L${CRAY_MPICH_ROOTDIR}/gtl/lib -lamdhip64  -g -ltcmalloc -lmpi_gtl_hsa" HIPFLAGS="--amdgpu-target=gfx90a"
 
 make -j 14 2>&1 | tee op_grid.out
-
+make install

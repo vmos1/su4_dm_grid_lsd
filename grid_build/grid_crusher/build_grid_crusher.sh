@@ -54,4 +54,4 @@ CXX=hipcc MPICXX=mpicxx \
 CXXFLAGS="-fPIC -I/opt/rocm-5.2.0/include/ -std=c++14 -I${MPICH_DIR}/include  -g"  LDFLAGS=" -L${MPICH_DIR}/lib -lmpi -L${CRAY_MPICH_ROOTDIR}/gtl/lib -lmpi_gtl_hsa -lamdhip64  -g -L/sw/crusher/spack-envs/base/opt/cray-sles15-zen3/gcc-11.2.0/gperftools-2.9.1-72ubwtuc5wcz2meqltbfdb76epufgzo2/lib -ltcmalloc" 
 
 make -j 14 2>&1 | tee op_grid.out
-
+make install
