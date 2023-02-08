@@ -31,13 +31,13 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `mkdir run1`
 - `cd run1`
 - Copy the file [submit1.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_tioga/submit1.sh) into `run1`:
-  - `cp submit1.sh .`
+  - `cp submit_1_sdm-4flavor.sh .`
 - Submit the job `sbatch submit1.sh`
 
 ### dwf test
 - `cd $RUN_DIR/dm_tests`
 - `mkdir run2`
-- `cd run2`
+- `cd run_2_dwhsdm.sh`
 - Copy the file [submit2.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_tioga/submit2.sh) into `run2`:
   - `cp submit2.sh .`
 - Submit the job `sbatch submit2.sh`
