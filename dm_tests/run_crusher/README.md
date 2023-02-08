@@ -30,14 +30,14 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd $RUN_DIR/dm_tests`
 - `mkdir run1`
 - `cd run1`
-- Copy the file [submit1.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_crusher/submit1.sh) into `run1`:
+- Copy the file [submit_1_sdm-4flavor.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_crusher/submit_1_sdm-4flavor.sh) into `run1`:
   - `cp submit_1_sdm-4flavor.sh .`
-- Submit the job `sbatch submit1.sh`
+- Submit the job `submit_1_sdm-4flavor.sh`
 
 ### dwf test
 - `cd $RUN_DIR/dm_tests`
 - `mkdir run2`
 - `cd run_2_dwhsdm.sh`
-- Copy the file [submit2.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_crusher/submit2.sh) into `run2`:
-  - `cp submit2.sh .`
-- Submit the job `sbatch submit2.sh`
+- Copy the file [submit_2_dwfhsdm.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_crusher/submit_2_dwfhsdm.sh) into `run2`:
+  - `cp submit_2_dwfhsdm.sh .`
+- Submit the job `sbatch submit_2_dwfhsdm.sh`
