@@ -35,18 +35,19 @@ int main(int argc, char **argv) {
 
   using namespace Grid;
 
-  // get beta, the fermion mass, and the extra dimension size
-  // (last three command line parameters)
-  double traj_l = std::stod(argv[argc - 5]);
-  int md_steps = std::stod(argv[argc - 4]);
-  Real beta = std::stod(argv[argc - 3]);
-  Real m_f = std::stod(argv[argc - 2]);
-  int Ls = atoi(argv[argc - 1]);
-  
+  // get Ls, traj_l, md_steps, beta and the fermion mass (last five command line parameters)
+  int Ls = atoi(argv[argc - 5]);
+  double traj_l = std::stod(argv[argc - 4]);
+  int md_steps = std::stod(argv[argc - 3]);
+  Real beta = std::stod(argv[argc - 2]);
+  Real m_f = std::stod(argv[argc - 1]);
+
+  argc -= 5;
+ 
   double pv_mass = 1.0;  // pauli-villars mass
   double M5 = 1.8;  // domain wall height
   
-  argc -= 5;
+
 
   Grid_init(&argc, &argv);
   int threads = GridThread::GetThreads();

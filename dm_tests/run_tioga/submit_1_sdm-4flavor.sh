@@ -29,12 +29,12 @@ source $GRID_DIR/setup_env.sh
 export TSAN_OPTIONS='ignore_noninstrumented_modules=1'
 export LD_LIBRARY_PATH
 
+traj_l=1
+md_steps=30
 BETA=11.0
 M_F=-0.6443 # kappa=0.1490
-md_steps=30
-traj_l=1
 
-APP="$RUN_DIR/dm_tests/build/hmc_SDM --grid 16.16.16.32 --mpi 2.2.2.4 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 100 --Thermalizations 10 $OPT $BETA $M_F $traj_l $md_steps"
+APP="$RUN_DIR/dm_tests/build/hmc_SDM --grid 16.16.16.32 --mpi 2.2.2.4 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 100 --Thermalizations 10 $OPT $traj_l $md_steps $BETA $M_F"
 srun --gpus-per-task 1 -n32 $BIND $APP > SDM.4node
 
 echo "--end " `date` `date +%s`

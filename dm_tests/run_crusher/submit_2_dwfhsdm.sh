@@ -33,14 +33,17 @@ MASK_7="0x0000fe0000000000"
 MEMBIND="--mem-bind=map_mem:3,3,1,1,0,0,2,2"
 CPU_MASK="--cpu-bind=mask_cpu:${MASK_0},${MASK_1},${MASK_2},${MASK_3},${MASK_4},${MASK_5},${MASK_6},${MASK_7}"
 
+export OPT="--comms-concurrent --comms-overlap "
 source $GRID_DIR/setup_env.sh
 
+Ls=4
+traj_l=1
+md_steps=30
 BETA=11.0
 M_F=0.6443 # kappa=0.1490
-Ls=4
 
-APP="$RUN_DIR/dm_tests/build/dweofa_HSDM --grid 8.8.8.16 --mpi 2.2.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 200 --Thermalizations 10 $OPT $traj_l $md_steps $BETA $M_F $Ls"
-srun --gpus-per-task 1 -n16 $BIND $APP > SDM.4node
+APP="$RUN_DIR/dm_tests/build/dweofa_HSDM --grid 8.8.8.16 --mpi 2.2.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 200 --Thermalizations 10 $OPT $Ls $traj_l $md_steps $BETA $M_F"
+srun --gpus-per-task 1 -n16 ${CPU_MASK} ${MEMBIND} $APP > SDM.4node
 
 echo "--end " `date` `date +%s`
 

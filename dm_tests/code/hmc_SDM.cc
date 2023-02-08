@@ -35,15 +35,14 @@ int main(int argc, char **argv) {
 
   using namespace Grid;
 
-  // get beta and the fermion mass (last two command line parameters)
-  Real beta = std::stod(argv[argc - 4]);
-  Real m_f = std::stod(argv[argc - 3]);
-  double traj_l = std::stod(argv[argc - 2]);
-  int md_steps = std::stod(argv[argc - 1]);
-
+  // get traj_l, md_steps, beta and the fermion mass (last four command line parameters)
+  double traj_l = std::stod(argv[argc - 4]);
+  int md_steps = std::stod(argv[argc - 3]);
+  Real beta = std::stod(argv[argc - 2]);
+  Real m_f = std::stod(argv[argc - 1]);
+ 
   argc -= 4;
   
-
   Grid_init(&argc, &argv);
   int threads = GridThread::GetThreads();
   // here make a routine to print all the relevant information on the run
@@ -72,8 +71,8 @@ int main(int argc, char **argv) {
   CPparams.saveInterval = 5;
   CPparams.format = "IEEE64BIG";
   
-  TheHMC.Resources.LoadILDGCheckpointer(CPparams);
-  //TheHMC.Resources.LoadNerscCheckpointer(CPparams);
+  //TheHMC.Resources.LoadILDGCheckpointer(CPparams);
+  TheHMC.Resources.LoadNerscCheckpointer(CPparams);
   //TheHMC.Resources.LoadBinaryCheckpointer(CPparams);
 
   RNGModuleParameters RNGpar;
