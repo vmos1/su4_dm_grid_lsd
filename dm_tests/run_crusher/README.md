@@ -6,7 +6,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd dm_tests/build`
 - Copy the contents of the folder [`dm_tests/code`](https://github.com/vmos1/su4_dm_grid_lsd/tree/develop/dm_tests/code) into `build`: 
   - `cp code/* .`
-- Copy the [dm_tests/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/develop/dm_tests/run_tioga/Makefile) into `build`: 
+- Copy the [dm_tests/run_crusher/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/develop/dm_tests/run_crusher/Makefile) into `build`: 
   - `cp Makefile .`
 
 - Setup paths:
@@ -30,7 +30,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd $RUN_DIR/dm_tests`
 - `mkdir run1`
 - `cd run1`
-- Copy the file [submit1.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_tioga/submit1.sh) into `run1`:
+- Copy the file [submit1.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_crusher/submit1.sh) into `run1`:
   - `cp submit_1_sdm-4flavor.sh .`
 - Submit the job `sbatch submit1.sh`
 
@@ -38,6 +38,6 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd $RUN_DIR/dm_tests`
 - `mkdir run2`
 - `cd run_2_dwhsdm.sh`
-- Copy the file [submit2.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_tioga/submit2.sh) into `run2`:
+- Copy the file [submit2.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_crusher/submit2.sh) into `run2`:
   - `cp submit2.sh .`
 - Submit the job `sbatch submit2.sh`
