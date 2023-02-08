@@ -4,9 +4,9 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd <run_dir>`
 - `mkdir dm_tests/build`
 - `cd dm_tests/build`
-- Copy the contents of the folder [`dm_tests/code`](https://github.com/vmos1/su4_dm_grid_lsd/tree/develop/dm_tests/code) into `build`: 
+- Copy the contents of the folder [`dm_tests/code`](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/code) into `build`: 
   - `cp code/* .`
-- Copy the [dm_tests/run_crusher/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/develop/dm_tests/run_crusher/Makefile) into `build`: 
+- Copy the [dm_tests/run_crusher/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_crusher/Makefile) into `build`: 
   - `cp Makefile .`
 
 - Setup paths:
