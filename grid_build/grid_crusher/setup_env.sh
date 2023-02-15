@@ -5,6 +5,7 @@ module load rocm/5.2.0
 module load cray-mpich/8.1.17
 module load gmp
 module load fftw
+module load hdf5
 #module load cray-fftw
 #module load gperftools
 module load craype-accel-amd-gfx90a
