@@ -1,6 +1,6 @@
 #!/bin/bash
 # Begin LSF Directives
-#SBATCH -A lsd
+#SBATCH -A latticgc
 #SBATCH -t 00:10:00
 #SBATCH -J sdm4nodes
 #SBATCH -o sdm4nodes.%J
