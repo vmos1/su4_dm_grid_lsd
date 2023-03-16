@@ -35,7 +35,8 @@ BETA=11.0
 M_F=0.6443 # kappa=0.1490
 
 APP="$RUN_DIR/dm_tests/build/dweofa_HSDM --grid 8.8.8.16 --mpi 2.2.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 200 --Thermalizations 10 $OPT $Ls $traj_l $md_steps $BETA $M_F"
-srun --gpus-per-task 1 -n16 $BIND $APP > SDM.4node
+## srun --gpus-per-task 1 -n16 $BIND $APP > SDM.4node
+srun --gpus-per-task 1 -n16 $APP > SDM.4node
 
 echo "--end " `date` `date +%s`
 
