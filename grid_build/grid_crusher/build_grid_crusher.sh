@@ -48,7 +48,7 @@ cd $grid/
 mkdir -p install/build-Nc4
 cd install/build-Nc4
 
-../../Grid/configure --enable-comms=mpi-auto --enable-unified=no --enable-shm=nvlink --enable-accelerator=hip  --enable-gen-simd-width=64 --enable-simd=GPU --enable-Nc=3 --with-lime=$prefix/lime-1.3.2 --with-mpfr=/opt/cray/pe/gcc/mpfr/3.1.4 --with-gmp=$OLCF_GMP_ROOT --with-fftw=${OLCF_FFTW_ROOT}  --disable-fermion-reps  --prefix=$prefix CXX=hipcc MPICXX=mpicxx CXXFLAGS="-fPIC -I/opt/rocm-5.2.0/include/ -std=c++14 -I${MPICH_DIR}/include -g" LDFLAGS="-L${MPICH_DIR}/lib -lmpi -L${CRAY_MPICH_ROOTDIR}/gtl/lib -lmpi_gtl_hsa -lamdhip64 -L/sw/crusher/spack-envs/base/opt/cray-sles15-zen3/gcc-11.2.0/gperftools-2.9.1-72ubwtuc5wcz2meqltbfdb76epufgzo2/lib -ltcmalloc"
+../../Grid/configure --enable-comms=mpi-auto --enable-unified=no --enable-shm=nvlink --enable-accelerator=hip  --enable-gen-simd-width=64 --enable-simd=GPU --enable-Nc=4 --with-lime=$prefix/lime-1.3.2 --with-mpfr=/opt/cray/pe/gcc/mpfr/3.1.4 --with-gmp=$OLCF_GMP_ROOT --with-fftw=${FFTW_ROOT}  --disable-fermion-reps  --prefix=$prefix CXX=hipcc MPICXX=mpicxx CXXFLAGS="-fPIC -I/opt/rocm-5.2.0/include/ -std=c++14 -I${MPICH_DIR}/include -g" LDFLAGS="-L${MPICH_DIR}/lib -lmpi -L${CRAY_MPICH_ROOTDIR}/gtl/lib -lmpi_gtl_hsa -lamdhip64 -L/sw/crusher/spack-envs/base/opt/cray-sles15-zen3/gcc-12.2.0/gperftools-2.10-7yw4wqiuge7wrhi33kikzkpvsz5d47ti/lib -ltcmalloc --amdgpu-target=gfx90a"
 
 make -j 14 2>&1 | tee op_grid.out
 make install
