@@ -1,5 +1,6 @@
 # su4_dm_grid_lsd
 Code to study SU(4) stealth dark matter theories.
+Build and run scripts are developed for use on the AMD GPU supercomputers Tioga and Crusher.
 
 ## Packges used
 | Description | Software package used |
