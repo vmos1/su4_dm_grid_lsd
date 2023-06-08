@@ -1,6 +1,10 @@
 # su4_dm_grid_lsd
-Code to build [Grid software](https://github.com/paboyle/Grid) for studying SU(4) stealth dark matter theories./
-Borrowing instructions from https://github.com/paboyle/Grid/wiki/Summit-compilation-(as-of-August-2019) 
+Code to study SU(4) stealth dark matter theories.
+
+## Packges used
+| Description | Software package used |
+Gauge generation | [Grid](https://github.com/paboyle/Grid) |
+Measurement of observables  | [Hadrons](https://aportelli.github.io/Hadrons-doc/#/) | 
 
 ## Structure of repository
 | Description | Folder location |
