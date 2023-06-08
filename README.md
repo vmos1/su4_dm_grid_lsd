@@ -3,6 +3,7 @@ Code to study SU(4) stealth dark matter theories.
 
 ## Packges used
 | Description | Software package used |
+| -- | -- |
 Gauge generation | [Grid](https://github.com/paboyle/Grid) |
 Measurement of observables  | [Hadrons](https://aportelli.github.io/Hadrons-doc/#/) | 
 
