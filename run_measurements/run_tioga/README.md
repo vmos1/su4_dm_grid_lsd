@@ -24,7 +24,6 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 
 - Setup paths:
   - `export GRID_DIR=<build_dir>`
-  - `export RUN_DIR=<run_dir>`
 
 ### HMC test:
 - `cd $RUN_DIR/dm_tests`
