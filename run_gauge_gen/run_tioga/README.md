@@ -37,7 +37,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 ### dwf test
 - `cd $RUN_DIR/dm_tests`
 - `mkdir run2`
-- `cd run_2_dwhsdm.sh`
+- `cd run2`
 - Copy the file [submit_2_dwfhsdm.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/dm_tests/run_tioga/submit_2_dwfhsdm.sh) into `run2`:
   - `cp submit_2_dwfhsdm.sh .`
 - Submit the job `sbatch submit_2_dwfhsdm.sh`
