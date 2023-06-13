@@ -14,4 +14,5 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd measurement`
 - Copy the file [TestHadrons.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_measurements/run_tioga/TestHadrons.sh) into this directory:
   - `cp TestHadrons.sh .`
+- `ml -flux_wrappers` to remove flux wrapper 
 - Submit the job `sbatch TestHadrons.sh`
