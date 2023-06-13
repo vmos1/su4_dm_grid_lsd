@@ -1,7 +1,7 @@
 # Run analysis code for generated gauge configurations
 You need two directory paths : Build directory: `build_dir` and Run directory: `run_dir`
 - Need a gauge config file with name `ckpoint_lat_16_8.140` (these are large and cannot be stored in a repository).
-- Edit the xml file `DWFtest.xm` and link appropriate gauge config file in lines 5 and 28.
+- Edit the xml file `DWFtest.xm` in lines 5 and 28 and link appropriate gauge config file.
 
 ## Run Hadrons
 - Setup paths:
