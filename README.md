@@ -13,3 +13,5 @@ Measurement of observables  | [Hadrons](https://aportelli.github.io/Hadrons-doc/
 | -- | -- |
 | Build Grid on Tioga  | [grid_tioga](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/grid_build/grid_tioga) | 
 | Run SU(4) HMC tests on Tioga  | [run_tioga](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/run_gauge_gen/run_tioga) | 
+| Build Hadrons on Tioga | [hadrons_tioga](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/hadrons_build/hadrons_tioga) |
+| Run Hadrons on SU(4) gauge configurations on Tioga | [run_tioga](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/run_measurements/run_tioga)|
