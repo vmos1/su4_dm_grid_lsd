@@ -12,4 +12,4 @@ Measurement of observables  | [Hadrons](https://aportelli.github.io/Hadrons-doc/
 | Description | Folder location |
 | -- | -- |
 | Build Grid on Tioga  | [grid_tioga](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/grid_build/grid_tioga) | 
-| Run SU(4) HMC tests on Tioga  | [run_tioga](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/dm_tests/run_tioga) | 
+| Run SU(4) HMC tests on Tioga  | [run_tioga](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/run_gauge_gen/run_tioga) | 
