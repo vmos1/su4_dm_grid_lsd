@@ -2,9 +2,9 @@
 
 #SBATCH -A lgt104_crusher
 #SBATCH -t 00:30:00
-#SBATCH -J sdm4nodes
-#SBATCH -o sdm4nodes.%J
-#SBATCH -e sdm4nodes.%J
+#SBATCH -J hsdm
+#SBATCH -o hsdm.%J
+#SBATCH -e hsdm.%J
 #SBATCH -N 2
 #SBATCH -n 8
 #SBATCH -C nvme
@@ -39,10 +39,10 @@ source $GRID_DIR/setup_env.sh
 Ls=4
 traj_l=1
 md_steps=30
-BETA=11.0
-M_F=0.6443 # kappa=0.1490
+BETA=10.0
+M_F=0.0443 # kappa=0.1490
 
-APP="$RUN_DIR/dm_tests/build/dweofa_HSDM --grid 8.8.8.16 --mpi 2.2.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 200 --Thermalizations 10 $OPT $Ls $traj_l $md_steps $BETA $M_F"
+APP="$RUN_DIR/dm_tests/build/dweofa_mobius_HSDM --grid 8.8.8.16 --mpi 2.2.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 200 --Thermalizations 10 $OPT $Ls $traj_l $md_steps $BETA $M_F"
 srun --gpus-per-task 1 -n16 ${CPU_MASK} ${MEMBIND} $APP > HSDM.2node
 
 echo "--end " `date` `date +%s`
