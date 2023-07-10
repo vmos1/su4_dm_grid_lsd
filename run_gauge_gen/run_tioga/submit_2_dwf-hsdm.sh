@@ -34,7 +34,7 @@ md_steps=10
 BETA=10.0
 M_F=0.0443
 
-APP="$RUN_DIR/dm_tests/build/dweofa_mobius_HSDM --grid 16.16.16.8 --mpi 4.4.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 200 --Thermalizations 10 $OPT $Ls $traj_l $md_steps $BETA $M_F"
+APP="$RUN_DIR/build/dweofa_mobius_HSDM --grid 16.16.16.8 --mpi 4.4.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --Trajectories 200 --Thermalizations 10 $OPT $Ls $traj_l $md_steps $BETA $M_F"
 #srun --gpus-per-task 1 -n64 $BIND $APP > HSDM.out
 #srun --gpus-per-task 1 -n64 $APP > HSDM.out
 srun -n64 $APP > HSDM.out
