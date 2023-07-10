@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
    // Typedefs to simplify notation
   typedef GenericHMCRunner<MinimumNorm2> HMCWrapper;  // Uses the default minimum norm
   typedef WilsonImplR FermionImplPolicy;
-  typedef WilsonFermionR FermionAction;
+  typedef DomainWallFermionD FermionAction;
   typedef typename FermionAction::FermionField FermionField;
 
 
@@ -121,8 +121,8 @@ int main(int argc, char **argv) {
   LatticeGaugeField U(GridPtr);
 
   // DJM: setup for EOFA ratio (Shamir)
-  DomainWallEOFAFermionR Strange_Op_L(U, *FGrid, *FrbGrid, *GridPtr, *GridRBPtr, m_f,     m_f, pv_mass,  0.0, -1, M5);
-  DomainWallEOFAFermionR Strange_Op_R(U, *FGrid, *FrbGrid, *GridPtr, *GridRBPtr, pv_mass, m_f, pv_mass, -1.0,  1, M5);
+  DomainWallEOFAFermionD Strange_Op_L(U, *FGrid, *FrbGrid, *GridPtr, *GridRBPtr, m_f,     m_f, pv_mass,  0.0, -1, M5);
+  DomainWallEOFAFermionD Strange_Op_R(U, *FGrid, *FrbGrid, *GridPtr, *GridRBPtr, pv_mass, m_f, pv_mass, -1.0,  1, M5);
   ExactOneFlavourRatioPseudoFermionAction<FermionImplPolicy> EOFA(Strange_Op_L, Strange_Op_R, CG, OFRp, true);
 
     // Collect actions
