@@ -4,10 +4,9 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd <run_dir>`
 - `mkdir dm_tests/build`
 - `cd dm_tests/build`
-- Copy the contents of the folder [`run_gauge_gen
-/code/`](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/run_gauge_gen/code) into `build`: 
+- Copy the contents of the folder [`run_gauge_gen/code/`](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/run_gauge_gen/code) into `build`: 
   - `cp code/* .`
-- Copy the [dm_tests/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/Makefile) into `build`: 
+- Copy the [run_gauge_gen/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/Makefile) into `build`: 
   - `cp Makefile .`
 
 - Setup paths:
