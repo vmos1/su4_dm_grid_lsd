@@ -1,12 +1,13 @@
 ##################
 export grid=$GRID_DIR
 export prefix=$GRID_DIR/grid_prefix
-export build=$grid/hadrons_build2
+export build=$grid/hadrons_build
 #################
 cd $grid
 
 source setup_env.sh
 git clone git@github.com:aportelli/Hadrons.git
+
 cd Hadrons
 ./bootstrap.sh
 
