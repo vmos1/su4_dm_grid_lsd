@@ -2,8 +2,8 @@
 You need two directory paths : Build directory: `build_dir` and Run directory: `run_dir`
 ## Build executables
 - `cd <run_dir>`
-- `mkdir dm_tests/build`
-- `cd dm_tests/build`
+- `mkdir /build`
+- `cd /build`
 - Copy the contents of the folder [`run_gauge_gen/code/`](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/run_gauge_gen/code) into `build`: 
   - `cp code/* .`
 - Copy the [run_gauge_gen/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/Makefile) into `build`: 
@@ -27,7 +27,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
   - `export RUN_DIR=<run_dir>`
 
 ### HMC test:
-- `cd $RUN_DIR/dm_tests`
+- `cd $RUN_DIR/`
 - `mkdir run1`
 - `cd run1`
 - Copy the file [submit_1_sdm-4flavor.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/submit_1_sdm-4flavor.sh) into `run1`:
@@ -35,7 +35,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - Submit the job `submit_1_sdm-4flavor.sh`
 
 ### dwf test
-- `cd $RUN_DIR/dm_tests`
+- `cd $RUN_DIR/`
 - `mkdir run2`
 - `cd run2`
 - Copy the file [submit_2_dwfhsdm.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/submit_2_dwf-hsdm.sh) into `run2`:
