@@ -2,8 +2,8 @@
 You need two directory paths : Build directory: `build_dir` and Run directory: `run_dir`
 ## Build executables
 - `cd <run_dir>`
-- `mkdir /build`
-- `cd /build`
+- `mkdir build`
+- `cd build`
 - Copy the contents of the folder [`run_gauge_gen/code/`](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/run_gauge_gen/code) into `build`: 
   - `cp code/* .`
 - Copy the [run_gauge_gen/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/Makefile) into `build`: 
