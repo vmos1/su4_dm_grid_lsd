@@ -174,28 +174,28 @@ def f_moments(y,L):
             m[i]=gv.dataset.avg_data(y**i)
 
         # Check moments obtained by gvar, with direct calculation
-        n=[gv.gvar(0,0) for i in range(5)]  # List to store moments
-        n[0]=gv.gvar(1,1e-16) # zeroth moment is 1
-        for i in range(1,5):
-            arr=y**i
-            n[i]=gv.gvar(np.mean(arr),np.std(arr)/np.sqrt(arr.shape[0]))
+#         n=[gv.gvar(0,0) for i in range(5)]  # List to store moments
+#         n[0]=gv.gvar(1,1e-16) # zeroth moment is 1
+#         for i in range(1,5):
+#             arr=y**i
+#             n[i]=gv.gvar(np.mean(arr),np.std(arr)/np.sqrt(arr.shape[0]))
 
         sus=(L**3)*(m[2]-(m[1]**2))
         if sus>1e-7: 
             kurt=(m[4] - 4* m[3] *m[1] + 6* m[2]* (m[1]**2) - 3* (m[1]**4))/(sus**2)
         else: kurt=gv.gvar(np.nan,np.nan)
     
-    elif mode==2: ## Propagating errors for high correlated variables doesn't work, so we use jackknife
+    elif mode==2: ## Propagating errors for highly correlated variables doesn't work, so we use jackknife
         ### Compute arrays of moments
         m=[y**i for i in range(0,5)] # List to store powers of input
 
         ## Compute sus and kurt by jackknifing elements of this list
-        arr=(y-np.mean(y))**2
+        arr=(y - np.mean(y))**2
         sus=(L**3) * f_jackknife(arr)
         
         if sus>1e-7:
     #         arr=(m[4] - 4* m[3] *m[1] + 6* m[2]* (m[1]**2) - 3* (m[1]**4))/(sus**2)
-            arr=((y-np.mean(y))**4)
+            arr=((y - np.mean(y))**4)
             kurt= f_jackknife(arr) / (gv.mean(sus)**2)
         else: kurt=gv.gvar(np.nan,np.nan)
     
