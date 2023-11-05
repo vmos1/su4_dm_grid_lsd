@@ -31,7 +31,7 @@ def f_get_plaquette(fname,dict1):
         arr=np.array([[int(i.split('[ ')[-1].split(' ]')[0]), np.float64(i.split(' ')[-1])] 
                          for i in op])
         
-        ## Hack for when Plaquette is printed twice : smeard and unsmeared
+        ## Hack for when Plaquette is printed twice : smeared and unsmeared
         arr=arr[0::2]
         
         dict1['Plaquette']=arr[:,1]
@@ -42,6 +42,7 @@ def f_get_plaquette(fname,dict1):
         print(e)
     
     return dict1
+
 
 def f_get_polyakov(fname,dict1):
     '''
@@ -112,7 +113,7 @@ def f_get_metropolis(fname,dict1,lgth):
 
 def f_parse_grid_data(fname):
     '''
-    Combine data (Plaquette, Polyakov loop, Traj. time, Metropolis info) 
+    Combine data (Plaquette, Polyakov loop, Trajectory time, Metropolis info) 
     from output file for a single run into dataframe
     '''
     dict1={}
@@ -157,43 +158,7 @@ def f_jackknife(arr):
     err=np.sqrt( np.sum((arr_samples-mean)**2) * ((N-1)/N) ) # sqrt( (N-1) * variance ) for jackknife
 
     return gv.gvar(mean,err)
-    
-    
-# def f_moments(y,L):
-#     ''' Compute susceptibility and Kurtosis for observables'''
-    
-# #     m=[gv.gvar(0,0) for i in range(5)]  # List to store moments
-# #     m[0]=gv.gvar(1,1e-16) # zeroth moment is 1
-# #     for i in range(1,5):
-# #         m[i]=gv.dataset.avg_data(y**i)
-        
-#     ## Check moments obtained by gvar, with direct calculation
-# #     n=[gv.gvar(0,0) for i in range(5)]  # List to store moments
-# #     n[0]=gv.gvar(1,1e-16) # zeroth moment is 1
-# #     for i in range(1,5):
-# #         arr=y**i
-# #         n[i]=gv.gvar(np.mean(arr),np.std(arr)/np.sqrt(arr.shape[0]))
-    
-# #     sus=(L**3)*(m[2]-(m[1]**2))
-# #     kurt=(m[4] - 4* m[3] *m[1] + 6* m[2]* (m[1]**2) - 3* (m[1]**4))/(sus**2)
 
-    
-#     ## Propagating errors for high correlated variables doesn't work, so we use jackknife
-#     ### Compute arrays of moments
-#     m=[y**i for i in range(0,5)] # List to store powers of input
-    
-#     ## Compute sus and kurt by jackknifing elements of this list
-#     arr=(y-np.mean(y))**2
-#     sus=(L**3) * f_jackknife(arr)
-# #     print(sus)
-    
-#     if sus>1e-7:
-# #         arr=(m[4] - 4* m[3] *m[1] + 6* m[2]* (m[1]**2) - 3* (m[1]**4))/(sus**2)
-#         arr=((y-np.mean(y))**4)
-#         kurt= f_jackknife(arr) / (gv.mean(sus)**2)
-#     else: kurt=gv.gvar(np.nan,np.nan)
-    
-#     return sus,kurt
 
 def f_moments(y,L):
     ''' Compute susceptibility and Kurtosis for observables'''
@@ -282,12 +247,12 @@ def f_autocorr_time(a1):
     return np.inf
 
 
-def f_get_summary_data(df,L,dict1,equil=30):
+def f_get_summary_data(df,L,dict1,equil=50):
     '''
     Get data averaged over Monte-Carlo time for a single run
     '''
     
-    drop_idx=equil
+    drop_idx = equil
     
     if df.shape[0]<=equil:
         return dict1
