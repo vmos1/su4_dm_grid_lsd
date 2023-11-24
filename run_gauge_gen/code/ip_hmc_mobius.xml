@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<grid>
+  <HMC>
+    <StartTrajectory>0</StartTrajectory>
+    <Trajectories>4</Trajectories>
+    <MetropolisTest>true</MetropolisTest>
+    <NoMetropolisUntil>0</NoMetropolisUntil>
+    <StartingType>HotStart</StartingType>
+    <PerformRandomShift>false</PerformRandomShift>
+    <MD>
+      <name>MinimumNorm2</name>
+      <MDsteps>30</MDsteps>
+      <trajL>1.0</trajL>
+    </MD>
+  </HMC>
+  <Checkpointer>
+    <config_prefix>./ckpoint_lat</config_prefix>
+    <rng_prefix>./ckpoint_rng</rng_prefix>
+    <saveInterval>1</saveInterval>
+    <format>IEEE64BIG</format>
+  </Checkpointer>
+  <RandomNumberGenerator>
+    <serial_seeds>1 2 3 4 5</serial_seeds>
+    <parallel_seeds>6 7 8 9 10</parallel_seeds>
+  </RandomNumberGenerator>
+  <Action>
+    <gauge_beta>11.00</gauge_beta>
+    <Mobius>
+        <Ls>4</Ls>
+        <mass>0.1</mass>
+        <M5>1.0</M5>
+        <b>1.5</b>
+        <c>0.5</c>
+        <StoppingCondition>1e-10</StoppingCondition>
+        <MaxCGIterations>30000</MaxCGIterations>
+        <ApplySmearing>false</ApplySmearing>
+    </Mobius>
+  </Action>
+</grid>
