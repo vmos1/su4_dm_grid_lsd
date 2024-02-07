@@ -10,12 +10,12 @@ echo PREFIX $prefix
 ##################
 #LIME
 ##################
-#cd $prefix
-#wget http://usqcd-software.github.io/downloads/c-lime/lime-1.3.2.tar.gz
-#tar xvzf lime-1.3.2.tar.gz
-#cd lime-1.3.2
-#./configure --prefix $prefix
-#make all install 2>&1 | tee op_lime.out
+cd $prefix
+wget http://usqcd-software.github.io/downloads/c-lime/lime-1.3.2.tar.gz
+tar xvzf lime-1.3.2.tar.gz
+cd lime-1.3.2
+./configure --prefix $prefix
+make all install 2>&1 | tee op_lime.out
 
 ##################
 #MPFR : already installed on Tioga
@@ -40,12 +40,10 @@ git checkout -b june15_2023 e3e1cc19620b8ee9834dfb35491ff6c36857d52c
 #build Grid
 ##################
 cd $grid/
-mkdir -p install/build-Nc4
-cd install/build-Nc4
+mkdir -p install/build-Nc3
+cd install/build-Nc3
 
-#../../Grid/configure --enable-comms=mpi --enable-unified=no --enable-shm=no --enable-accelerator=cuda  --enable-accelerator-cshift --enable-gen-simd-width=32 --enable-simd=GPU --enable-Nc=4 --disable-fermion-reps --with-lime=$prefix/lime-1.3.2 --prefix=$prefix CXX=nvcc MPICXX=mpicxx CXXFLAGS="-fPIC -I/opt/rocm-5.2.0/include/ -std=c++17 -I${MPICH_DIR}/include" LDFLAGS="-L${MPICH_DIR}/lib -lmpi -L${CRAY_MPICH_ROOTDIR}/gtl/lib -lamdhip64  -g -ltcmalloc -lmpi_gtl_hsa" HIPFLAGS="--amdgpu-target=gfx90a"
-
-../../Grid/configure --enable-comms=mpi --enable-unified=no --enable-shm=no --enable-accelerator=cuda  --enable-accelerator-cshift --enable-gen-simd-width=32 --enable-simd=GPU --enable-Nc=4 --disable-fermion-reps  --enable-gparity --disable-setdevice --with-lime=$prefix/lime-1.3.2 --prefix=$prefix CXX=nvcc MPICXX=mpicxx CXXFLAGS="-ccbin mpicxx -gencode arch=compute_70,code=sm_70 -I$prefix/include/ -std=c++14" LDFLAGS="-L$prefix/lib/"
+../../Grid/configure --enable-comms=mpi --enable-unified=no --enable-shm=no --enable-accelerator=cuda  --enable-accelerator-cshift --enable-gen-simd-width=32 --enable-simd=GPU --enable-Nc=3 --disable-fermion-reps  --enable-gparity --disable-setdevice --with-lime=$prefix/lime-1.3.2 --prefix=$prefix CXX=nvcc MPICXX=mpicxx CXXFLAGS="-ccbin mpicxx -gencode arch=compute_70,code=sm_70 -I$prefix/include/ -std=c++14" LDFLAGS="-L$prefix/lib/"
 
 make -j 14 2>&1 | tee op_grid.out
 make install
