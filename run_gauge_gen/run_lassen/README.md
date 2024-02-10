@@ -23,6 +23,6 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `mkdir run1`
 - `cd run1`
 - Copy the 2 files `su4_dm_grid_lsd/run_gauge_gen/run_lassen/submit_dwf-hsdm.lsf` and `su4_dm_grid_lsd/run_gauge_gen/run_lassen/code/ip_hmc_mobius.xml` into `run1`:
-  - `cp submit_dwf-hsdm.sh .`
+  - `cp submit_dwf-hsdm.lsf .`
   - `cp ip_hmc_mobius.xml .` 
-- Submit the job:  `sbatch submit_dwf-hsdm.sh`
+- Submit the job:  `bsub submit_dwf-hsdm.lsf`
