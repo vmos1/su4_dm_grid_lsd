@@ -30,9 +30,9 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd $RUN_DIR/`
 - `mkdir run1`
 - `cd run1`
-- Copy the file [submit_1_sdm-4flavor.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/submit_1_sdm-4flavor.sh) into `run1`:
+- Copy the file `submit_1_sdm-4flavor.sh` into `run1`:
   - `cp submit_1_sdm-4flavor.sh .`
-- Submit the job `submit_1_sdm-4flavor.sh`
+- Submit the job:  `sbatch -t submit_1_sdm-4flavor.sh`
 
 ### dwf test
 - `cd $RUN_DIR/`
@@ -40,4 +40,4 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd run2`
 - Copy the file `submit_dwf-hsdm.sh` into `run2`:
   - `cp submit_dwf-hsdm.sh .`
-- Submit the job `sbatch submit_dwf-hsdm.sh`
+- Submit the job:  `sbatch submit_dwf-hsdm.sh`
