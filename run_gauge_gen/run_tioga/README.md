@@ -26,18 +26,10 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
   - `export GRID_DIR=<build_dir>`
   - `export RUN_DIR=<run_dir>`
 
-### HMC test:
+### SU(4) 1 flavor domain wall fermions
 - `cd $RUN_DIR/`
 - `mkdir run1`
 - `cd run1`
-- Copy the file `submit_1_sdm-4flavor.sh` into `run1`:
-  - `cp submit_1_sdm-4flavor.sh .`
-- Submit the job:  `sbatch -t submit_1_sdm-4flavor.sh`
-
-### dwf test
-- `cd $RUN_DIR/`
-- `mkdir run2`
-- `cd run2`
-- Copy the file `submit_dwf-hsdm.sh` into `run2`:
+- Copy the file `submit_dwf-hsdm.sh` into `run1`:
   - `cp submit_dwf-hsdm.sh .`
 - Submit the job:  `sbatch submit_dwf-hsdm.sh`
