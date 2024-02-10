@@ -12,21 +12,13 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - Setup paths:
   - `export GRID_DIR=<build_dir>`
   - `export RUN_DIR=<run_dir>`
-### HMC test: 
-- `source $GRID_DIR/setup_env.sh`
-- `make hmc_SDM`
-### DWF test: 
-- `source $GRID_DIR/setup_env.sh`
-- `make dweofa_HSDM`
-
-
-## Run Grid
-
-- Setup paths:
-  - `export GRID_DIR=<build_dir>`
-  - `export RUN_DIR=<run_dir>`
 
 ### SU(4) 1 flavor domain wall fermions
+
+- `source $GRID_DIR/setup_env.sh`
+- `make dweofa_HSDM`
+(For any of the other executables, run corresponding make command. For example, `make hmc_SDM` )
+
 - `cd $RUN_DIR/`
 - `mkdir run1`
 - `cd run1`
