@@ -4,40 +4,25 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd <run_dir>`
 - `mkdir build`
 - `cd build`
-- Copy the contents of the folder [`run_gauge_gen/code/`](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/run_gauge_gen/code) into `build`: 
+- Copy the contents of the folder `su4_dm_grid_lsd/run_gauge_gen/run_tioga/code/` into `build`: 
   - `cp code/* .`
-- Copy the [run_gauge_gen/run_tioga/Makefile](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/Makefile) into `build`: 
+- Copy the file ```su4_dm_grid_lsd/run_gauge_gen/run_tioga/Makefile``` into `build`: 
   - `cp Makefile .`
 
 - Setup paths:
   - `export GRID_DIR=<build_dir>`
   - `export RUN_DIR=<run_dir>`
-### HMC test: 
-- `source $GRID_DIR/setup_env.sh`
-- `make hmc_SDM`
-### DWF test: 
+
+### SU(4) 1 flavor with domain wall fermions
+#### Build executable
 - `source $GRID_DIR/setup_env.sh`
 - `make dweofa_HSDM`
-
-
-## Run Grid
-
-- Setup paths:
-  - `export GRID_DIR=<build_dir>`
-  - `export RUN_DIR=<run_dir>`
-
-### HMC test:
+(For any of the other executables, run corresponding make command. For example, `make hmc_SDM` )
+#### Run executable
 - `cd $RUN_DIR/`
 - `mkdir run1`
 - `cd run1`
-- Copy the file [submit_1_sdm-4flavor.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/submit_1_sdm-4flavor.sh) into `run1`:
-  - `cp submit_1_sdm-4flavor.sh .`
-- Submit the job `submit_1_sdm-4flavor.sh`
-
-### dwf test
-- `cd $RUN_DIR/`
-- `mkdir run2`
-- `cd run2`
-- Copy the file [submit_2_dwfhsdm.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/submit_2_dwf-hsdm.sh) into `run2`:
-  - `cp submit_2_dwfhsdm.sh .`
-- Submit the job `sbatch submit_2_dwfhsdm.sh`
+- Copy the 2 files `su4_dm_grid_lsd/run_gauge_gen/run_tioga/submit_dwf-hsdm.sh` and `su4_dm_grid_lsd/run_gauge_gen/run_tioga/code/ip_hmc_mobius.xml` into `run1`:
+  - `cp submit_dwf-hsdm.sh .`
+  - `cp ip_hmc_mobius.xml .` 
+- Submit the job:  `sbatch submit_dwf-hsdm.sh`
