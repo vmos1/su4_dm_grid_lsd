@@ -13,7 +13,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
   - `export GRID_DIR=<build_dir>`
   - `export RUN_DIR=<run_dir>`
 
-### SU(4) 1 flavor domain wall fermions
+### SU(4) 1 flavor with domain wall fermions
 #### Build executable
 - `source $GRID_DIR/setup_env.sh`
 - `make dweofa_HSDM`
