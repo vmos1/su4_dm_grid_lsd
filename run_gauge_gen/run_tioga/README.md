@@ -4,9 +4,9 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd <run_dir>`
 - `mkdir build`
 - `cd build`
-- Copy the contents of the folder 'su4_dm_grid_lsd/run_gauge_gen/run_tioga/code/' into `build`: 
+- Copy the contents of the folder `su4_dm_grid_lsd/run_gauge_gen/run_tioga/code/` into `build`: 
   - `cp code/* .`
-- Copy the ```su4_dm_grid_lsd/run_gauge_gen/run_tioga/Makefile``` into `build`: 
+- Copy the file ```su4_dm_grid_lsd/run_gauge_gen/run_tioga/Makefile``` into `build`: 
   - `cp Makefile .`
 
 - Setup paths:
