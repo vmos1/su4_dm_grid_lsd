@@ -38,6 +38,6 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `cd $RUN_DIR/`
 - `mkdir run2`
 - `cd run2`
-- Copy the file [submit_2_dwfhsdm.sh](https://github.com/vmos1/su4_dm_grid_lsd/blob/main/run_gauge_gen/run_tioga/submit_2_dwf-hsdm.sh) into `run2`:
-  - `cp submit_2_dwfhsdm.sh .`
-- Submit the job `sbatch submit_2_dwfhsdm.sh`
+- Copy the file `submit_dwf-hsdm.sh` into `run2`:
+  - `cp submit_dwf-hsdm.sh .`
+- Submit the job `sbatch submit_dwf-hsdm.sh`
