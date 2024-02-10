@@ -26,7 +26,7 @@ source $GRID_DIR/setup_env.sh
 export TSAN_OPTIONS='ignore_noninstrumented_modules=1'
 export LD_LIBRARY_PATH
 
-APP="$RUN_DIR/build/lee218/dweofa_mobius_HSDM_2 --grid 16.16.16.8 --mpi 2.2.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --ParameterFile ip_hmc_mobius.xml"
+APP="$RUN_DIR/build/dweofa_mobius_HSDM_v2 --grid 16.16.16.8 --mpi 2.2.2.2 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --ParameterFile ip_hmc_mobius.xml"
 lrun -M -gpu -n16 $APP > HSDM.2node.out
 
 echo "--end " `date` `date +%s`
