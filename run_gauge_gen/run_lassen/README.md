@@ -5,7 +5,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 - `mkdir build`
 - `cd build`
 - Copy the contents of the folder `su4_dm_grid_lsd/run_gauge_gen/run_lassen/code/` into `build`: 
-  - `cp code/* .`
+  - `cp code/*.cu .`
 - Copy the file ```su4_dm_grid_lsd/run_gauge_gen/run_lassen/Makefile``` into `build`: 
   - `cp Makefile .`
 
