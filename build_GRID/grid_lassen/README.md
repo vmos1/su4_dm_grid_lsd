@@ -1,6 +1,6 @@
 # Instructions to build Grid on Tioga at Livermore
 - Create a build directory `build_dir`.
-- Copy the scripts `build_grid_lassen.sh` and `setup_env.sh` from this [folder](https://github.com/vmos1/su4_dm_grid_lsd/tree/main/build_GRID/grid_lassen) to `build_dir`.
+- Copy the scripts `build_grid_lassen.sh` and `setup_env.sh` from this `su4_dm_grid_lsd//build_GRID/grid_lassen` to `build_dir`.
 - `export GRID_DIR=<build_dir>`
 - Run the script `./build_grid_lassen.sh 2>&1 | tee op_grid_build.out`
 
@@ -16,6 +16,6 @@
   - `export GRID_DIR=<build_dir>`
   - `export RUN_DIR=<run_dir>`
 - Now submit the scripts:
-  - `sbatch run_benchmark1_1node_dwf_fp32.sh`
-  - `sbatch run_benchmark2_2nodes_dwf_fp32.sh`
-  - `sbatch run_benchmark3_dwf_ITT.sh`
+  - `bsub run_benchmark1_1node_dwf_fp32.sh`
+  - `bsub run_benchmark2_2nodes_dwf_fp32.sh`
+  - `bsub run_benchmark3_dwf_ITT.sh`
