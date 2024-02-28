@@ -24,6 +24,7 @@ export LD_LIBRARY_PATH
 PARAMS=" --grid 8.8.8.8 --mpi 2.2.1.1 --comms-concurrent --comms-overlap --shm 2048 --shm-mpi 1"
 APP="$GRID_DIR/install/build-Nc4/benchmarks/Benchmark_ITT $PARAMS"
 echo $APP
-jsrun -n4 $APP > op_run3_2node.out
+#jsrun -n4 $APP > op_run3_2node.out
+lrun -M -gpu -n4 -o op_run3_2node.out $APP 
 echo "--end " `date` `date +%s`
 

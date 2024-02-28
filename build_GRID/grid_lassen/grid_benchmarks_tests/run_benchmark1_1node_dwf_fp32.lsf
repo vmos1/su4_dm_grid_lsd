@@ -25,8 +25,6 @@ export LD_LIBRARY_PATH
 
 PARAMS=" --grid 32.32.16.16 --mpi 2.2.1.1 --comms-sequential --shm 2048 --shm-mpi 1"
 APP="$GRID_DIR/install/build-Nc4/benchmarks/Benchmark_dwf_fp32 $PARAMS"
-##srun -n8 $BIND ./wrap $APP > run1_1node.out
-###jsrun -n4 $APP > op_run1_1node.out
-jsrun -n4 -o op_run1_1node.out $APP
-##lrun -n4 $APP > op_run1_1node.out
+# jsrun -n4 -o op_run1_1node.out $APP
+lrun -M -gpu -n4 -o op_run_1node.out $APP 
 echo "--end " `date` `date +%s`
