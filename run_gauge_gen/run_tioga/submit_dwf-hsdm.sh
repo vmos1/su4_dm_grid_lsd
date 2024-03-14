@@ -2,11 +2,11 @@
 # Begin LSF Directives
 #SBATCH -A latticgc
 #SBATCH -t 00:10:00
-#SBATCH -J ildg_r1
-#SBATCH -o ildg_r1.%J
-#SBATCH -e ildg_r1.%J
+#SBATCH -J hsdm 
+#SBATCH -o hsdm.%J
+#SBATCH -e hsdm.%J
 #SBATCH -N 1
-#SBATCH -n 1
+#SBATCH -n 8
 #SBATCH --exclusive
 #SBATCH --gpu-bind=map_gpu:0,1,2,3,7,6,5,4
 #SBATCH -c 8
@@ -29,8 +29,8 @@ source $GRID_DIR/setup_env.sh
 export TSAN_OPTIONS='ignore_noninstrumented_modules=1'
 export LD_LIBRARY_PATH
 
-APP="$RUN_DIR/build/dweofa_mobius_HSDM_v2 --grid 4.4.4.8 --mpi 1.1.1.1 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --ParameterFile ip_hmc_mobius.xml"
-srun -n1 $APP > SDM.1rank.out
+APP="$RUN_DIR/build/dweofa_mobius_HSDM_v2 --grid 16.16.16.8 --mpi 2.2.2.1 --shm 2048 --shm-force-mpi 1 --device-mem 5000 --ParameterFile ip_hmc_mobius.xml"
+srun -n8 $APP > HSDM.8rank.out
 
 echo "--end " `date` `date +%s`
 
