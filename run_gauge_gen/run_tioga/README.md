@@ -16,7 +16,7 @@ You need two directory paths : Build directory: `build_dir` and Run directory: `
 ### SU(4) 1 flavor with domain wall fermions
 #### Build executable
 - `source $GRID_DIR/setup_env.sh`
-- `make dweofa_HSDM`
+- `make dweofa_mobius_HSDM_v2`
 (For any of the other executables, run corresponding make command. For example, `make hmc_SDM` )
 #### Run executable
 - `cd $RUN_DIR/`
