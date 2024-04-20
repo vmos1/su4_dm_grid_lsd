@@ -1,3 +1,8 @@
+
+## Setup conda environment
+Use anaconda and the file `requirements.txt`
+
+
 ## Commands to setup directories for runs 
 
 
