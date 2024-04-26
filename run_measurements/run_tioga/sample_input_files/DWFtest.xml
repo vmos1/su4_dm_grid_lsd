@@ -2,9 +2,9 @@
 <grid>
   <parameters>
     <trajCounter>
-      <start>140</start>
-      <end>160</end>
-      <step>20</step>
+      <start>150</start>
+      <end>615</end>
+      <step>5</step>
     </trajCounter>
     <genetic>
       <popSize>20</popSize>
@@ -25,7 +25,7 @@
         <type>MIO::LoadNersc</type>
       </id>
       <options>
-        <file>./ckpoint_lat_16_8</file>
+        <file>/usr/workspace/lsd/ayyar1/projects/SU4_sdm/runs_Grid/2023_july12/runs/phase_diagram_5_hot_start/run_Lx-16_Lt-8_Ls-16_beta-11.1_mf-0.1/ckpoint_lat</file>
       </options>
     </module>
 <!--           Sources/Sinks             -->  
@@ -53,26 +53,28 @@
 <!-- Action for Strange Quark -->
     <module>
       <id>
-        <name>DWF_s</name>
-        <type>MAction::DWF</type>
+        <name>DWF_m</name>
+        <type>MAction::MobiusDWF</type>
       </id>
       <options>
         <gauge>gauge</gauge>
         <Ls>16</Ls>
-        <mass>0.32</mass>
+        <mass>0.1</mass>
         <M5>1.8</M5>
+        <b>1.5</b>
+        <c>0.5</c>
         <boundary>1 1 1 -1</boundary>
         <twist>0. 0. 0. 0.</twist>
       </options>
     </module>
 <!-- Solver for Strange Quark Action-->
-    <module> 
+    <module>
       <id>
         <name>CG_s</name>
         <type>MSolver::RBPrecCG</type>
       </id>
       <options>
-        <action>DWF_s</action>
+        <action>DWF_m</action>
         <maxIteration>8000</maxIteration>
         <residual>1e-09</residual>
         <eigenPack></eigenPack>
@@ -89,7 +91,7 @@
         <solver>CG_s</solver>
       </options>
     </module>
-<!-- -->    
+<!-- -->
    <module>
       <id>
         <name>mres_Strange_Quark</name>
@@ -97,13 +99,13 @@
       </id>
       <options>
         <prop>Strange_Quark_5d</prop>
-        <action>DWF_s</action>
-        <mass>0.32</mass>
-	<source>pt</source>
+        <action>DWF_m</action>
+        <mass>0.1</mass>
+    <source>pt</source>
         <test_axial>true</test_axial>
         <output>./MACHINE_JOBID_/prop_gauge_DWF</output>
       </options>
-    </module>       
+    </module>
 <!-- ######################################### -->
 <!-- #### Begin Meson Contraction Modules #### -->
 <!-- ######################################### -->
@@ -122,6 +124,21 @@
         <output>./MACHINE_JOBID_/eta_s_2pt</output>
       </options>
     </module>
+<!-- ######################################### -->
+<!-- #### Begin Wilson flow Modules #### -->
+<!-- ######################################### -->
+    <module>
+      <id>
+        <name>flow_observables</name>
+        <type>MGauge::FlowObservables</type>
+      </id>
+      <options>
+        <gauge>gauge</gauge>
+        <epsilon>0.01</epsilon>
+        <Nstep>100</Nstep>
+        <output>./MACHINE_JOBID_/Wflow_</output>
+      </options>
+    </module>
   </modules>
 </grid>
-
+    

@@ -107,7 +107,7 @@ def f_setup_dict_pars(run_type,run_dir,dict_pars):
             'out_file': f_get_out_filename(run_dir),
             'total_traj': 700,
             'therm': 0,
-            'starg_config': config_file,
+            'start_config': config_file,
                   })
     
     dict_pars['seed_serial'],dict_pars['seed_parallel'] = f_create_seed_string(mode='timestamp')
